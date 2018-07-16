@@ -1,0 +1,15 @@
+`date +%Y%m%d`
+fileSuffix=`date +%Y%m%d`
+ftpLogFile=
+file1
+putfile
+
+ftp -n -v <<EOF1 >> $ftpLogFile
+open ${ftpserver}
+user ${linuxclient} ${enzPW}
+mkdir ${ftpdirectory}
+cd ${ftpdirectory}
+put ${file1}  ${putfile} 
+quit
+EOF1
+fi
